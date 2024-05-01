@@ -1,0 +1,48 @@
+<head>
+    <title>GoConductor docs!</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+    <h1>MusicConductor</h1>
+    <h2><i>Class</i></h2>
+    <p>A controller designed to play multiple of it's children simultaneously (for instance, two layers of the same song). Provides an interface for tracks to be cued in and out of the arrangement.</p>
+    <p id="extends">Extends: <a href="docs-MultiTrackPlayer.html">MultiTrackPlayer</a></p>
+
+    <div id="properties">
+        <h2>Properties</h2>
+        <ul>
+            <li>
+                <h3><i>GcNode</i> LeadTrack</h3>
+                The track from which all others take their timing cues. When a new track is cued in or played, they play from the same position as the lead track. When this track finishes and loops, all others restart regardless of whether they have reached the end or not (in practice, the difference in time is unlikely to be more than a few milliseconds, but this could add up to a noticeable lag over multiple repeats). This is automatically and dynamically assigned, so does not need to be handled manually. Description of the method. <i>Note that publicly, this property is read only, and cannot be reassigned externally.</i>
+            </li>        
+        </ul>
+    </div>
+
+    <div  id="methods">
+        <h2>Methods</h2>
+        <ul>
+            <li>
+                <h3><i>Boolean</i> Cue(<i>GcNode</i> track)</h3>
+                Toggles the given child track in or out of the arrangement. Returns true if the track is found and cued in/out.
+                <br><b>Returns:</b> true if the track is found and cued successfully.
+            </li>
+            <li>
+                <h3><i>Boolean</i> CueIn(<i>GcNode</i> track)</h3>
+                Cues the given child track in if and only if it is not playing, otherwise it does nothing.
+                <br><b>Returns:</b> true if the track is found and cued successfully. False if the track was already playing.
+            </li>
+            <li>
+                <h3><i>Boolean</i> CueOut(<i>GcNode</i> track)</h3>
+                Cues the given child track out if and only if it is playing, otherwise it does nothing.
+                <br><b>Returns:</b> true if the track is found and cued successfully. False if the track not was already playing.
+            </li>
+            <li>
+                <i><h3>Also:</h3> Boolean CueInIdx(int idx), boolean CueOutIdx(int idx), boolean CueInName(string name), and boolean CueOutName(string name). The usage and effects of these methods should be easily inferable, but please feedback if this is not the case!</i>
+            </li>
+        </ul>
+    </div>
+
+    <div id="home-link"><a href="using-goconductor.html">Return Home</a></div>
+</body>

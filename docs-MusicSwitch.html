@@ -1,0 +1,43 @@
+<head>
+    <title>GoConductor docs!</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+    <h1>MusicSwitch</h1>
+    <h2><i>Class</i></h2>
+    <p>A controller node designed such that, at any given time, only one of it's children should be playing at any one time. Intended for use switching between tracks.</p>
+    <p id="extends">Extends: <a href="docs-MultiTrackPlayer.html">MultiTrackPlayer</a></p>
+
+    <div id="properties">
+        <h2>Properties</h2>
+        <ul>
+            <li>
+                <h3><i>GcNode</i> CurrentlyPlaying</h3>
+                Whichever of the switch's children is currently playing. Ie, whichever one was last cued. By default, this is null.
+            </li>
+            <li>
+                <h3><i>Boolean</i> RestartOnRecue</h3>
+                Determines the switches behavior if 'cue' is called, passed with the same track that is already playing. If false, the call will simply ignored; if true, the track will be started from the beginning, as though it is a new (although identical) track.
+            </li>   
+            <li>
+                <h3><i>Float</i> TransitionTime</h3>
+                The time, in seconds, the crossfade between two tracks will take when 'cue' is called during playback. If set to 0, this gives the impression of a hard cut.
+            </li>       
+        </ul>
+    </div>
+
+    <div  id="methods">
+        <h2>Methods</h2>
+        <ul>
+            <li>
+                <h3><i>Boolean</i> Cue(<i>GcNode</i> track)</h3>
+                Assigns track to CurrentlyPlaying. If another track is playing when this method is called, a transition between the old track and the new is triggered.
+            </li>
+        </ul>
+    </div>
+
+    <div id="home-link"><a href="using-goconductor.html">Return Home</a></div>
+    
+</body>

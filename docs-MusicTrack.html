@@ -1,0 +1,37 @@
+<head>
+    <title>GoConductor docs!</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+    <h1>MusicTrack</h1>
+    <h2><i>Class</i></h2>
+    <p>One of the simplest track controllers added by GoConductor, still geared towards playing music. It is designed to be a leaf node of a Switch/COnductor tree, but can also be used on it's own. Essentially adds as a wrapper for a Godot AudioStreamPlayer with some streamlined functionality.</p>
+    <p id="extends">Extends: <a href="docs-GcNode.html">GcNode</a></p>
+
+    <div id="properties">
+        <h2>Properties</h2>
+        <ul>
+            <li>
+                <h3><i>Boolean</i> AutoPlay</h3>
+                If true, the music track will automatically play when the scene it is part of is ready. This overrides any control from nodes higher up the scene tree (Conductors, Switches etc.)
+            </li>        
+            <li>
+                <h3><i>Boolean</i> Loop</h3>
+                If true, the track will automatically restart upon reaching the end. This will appear as a seamless loop (assuming the audio itself is clipped accordingly). <i>This will only work if the AudioStream is imported with loop set to false.</i>
+            </li>
+            <li>
+                <h3><i>AudioStream</i> Track</h3>
+                The audio resource this code is meant to play. Note that if you desire the track to loop, it should be imported with loop set to false, this is because GoConductor handles looping internal (see Loop property above).
+            </li>
+            <li>
+                <h3><i>Float</i> Gain</h3>
+                Applies a boost or reduction to the track's volume when it is played. This property is also used for fading tracks in/out using Tweens, so is designed to be changeable at runtime.
+            </li>   
+        </ul>
+    </div>
+
+    <div id="home-link"><a href="using-goconductor.html">Return Home</a></div>
+
+</body>

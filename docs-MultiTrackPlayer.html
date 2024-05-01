@@ -1,0 +1,37 @@
+<head>
+    <title>GoConductor docs!</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+    <h1>MultiTrackPlayer</h1>
+    <h2><i>Abstract Class</i></h2>
+    <p>This is the base class for any track controller node which acts as director for one or more child nodes, two examples being the <a href="docs-MusicSwitch.html">MusicSwitch</a> and the <a href="docs-MusicConductor.html">MusicConductor</a>. These nodes will have no functionality unless they have children to control.
+    </p>
+    <p id="extends">Extends: <a href="docs-GcNode.html">CgNode</a></p>
+    <p id="extended-by">Extended By: <a href="docs-MusicConductor.html">MusicConductor</a>, <a href="docs-MusicSwitch.html">MusicSwitch</a></p>
+
+    <div id="methods">
+        <h2>Methods</h2>
+        <ul>
+            <li>
+                <h3><i>Boolean</i> Cue(<i>GcNode</i> track)</h3>
+                Cues a track in (or out). The explicit aliases for this function with different parameters as opposed to just simple overloads, given below, exist because GDScript does not support overloading for cross-language-scripting. Thus, it is simpler to call explicitly different methods from .GD scripts, rather than having to call <i>get_child(idx)</i> or <i>find_child(name)</i> whenever needed.
+                <br><b>Returns:</b> true if the track is cued successfully.
+            </li>
+            <li>
+                <h3><i>Boolean</i> CueIdx(<i>int</i> trackIdx)</h3>
+                Calls Cue for the track found as a child node at the given index.
+                <br><b>Returns:</b> true if the track is found and cued successfully.
+            </li>
+            <li>
+                <h3><i>Boolean</i> CueName(<i>String</i> trackName)</h3>
+                Calls Cue for the track found as a child node with the given name. Note that it does not search recursively (ie for grandchildren etc.) 
+                <br><b>Returns:</b> true if the track is found and cued successfully.
+            </li>
+        </ul>
+    </div>
+
+    <div id="home-link"><a href="using-goconductor.html">Return Home</a></div>
+</body>

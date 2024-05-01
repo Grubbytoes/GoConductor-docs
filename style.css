@@ -1,0 +1,32 @@
+html {
+    display: table;
+    margin: auto;
+}
+
+body {
+    font-family: Arial, Helvetica, sans-serif;
+    margin: auto;
+    align-self: middle;
+    width: 85%;
+    text-align: justify;
+    text-justify: inter-word;
+}
+
+#properties, #methods {
+    margin-bottom: 12px;
+    padding: 4px;
+    background-color: lightgrey;
+}
+
+img {
+    width: 50%;
+    margin: 25px;
+}
+
+ol{
+    li{
+        margin-bottom: 8px;
+    }
+}
+
+

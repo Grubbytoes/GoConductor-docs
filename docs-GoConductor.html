@@ -1,0 +1,53 @@
+<head>
+    <title>GoConductor docs!</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+    <h1>GoConductor</h1>
+    <h2><i>Singleton</i></h2>
+    <p>The first thing you should do (and only thing you really need to do) upon adding GoConductor to your project structure is add GoConductor.tscn as an autoload scene in your project settings. By default it should have the name GoConductor, but everything will still work if you want to load it under a different name. </p>
+    <p id="extends">Extends: <a href="https://docs.godotengine.org/en/stable/classes/class_node.html">Godot Node</a></p>
+
+    <div  id="methods">
+        <h2>Methods</h2>
+        <ul>
+            <li>
+                <h3><i>Boolean</i> load_stage(<i>string</i> stage_path, <i>string</i> pseudonym = none)</h3>
+                Loads the stage of the given path relative to the GoConductor\Stages directory. Path does NOT need to include '.tscn'. Will load the stage under a pseudonym, if one is given, which it can be accessed as in future.
+                <b>Returns:</b> True if the stage is loaded successfully
+            </li>
+            <li>
+                <h3><i>Boolean</i> unstage(<i>string</i> stage_name)</h3>
+                Unloads the stage of the given name, if it has been loaded.
+                <b>Returns:</b> True if the stage is found and removed successfully
+            </li>
+            <li>
+                <h3><i>Boolean</i> swap_stage(<i>string</i> new_stage_path, <i>string</i> stage_name)</h3>
+                unloads the stage given by name, and loads the new stage as given by the path under the pseudonym of the original stage. If the original stage cannot be found, this function does nothing.  
+                <b>Returns:</b> True if the new stage is loaded and swapped in successfully
+            </li> 
+            <li>
+                <h3><i>Variant</i> get_stage_pointer(<i>string</i> stage_name)</h3>
+                Gets whatever is in the given stage. if the stage has only one child node, it will be this. If it has more than one, it will return an ordered array, OR a name dictionary, depending on the stage's settings.
+                <b>Returns:</b> The contents of the stage under the given name, or null if one does not exist/has not been loaded
+            </li> 
+            <li>
+                <h3><i>BaseStage</i> get_stage(<i>string</i> stage_name)</h3>
+                Passes a reference to the stage root node. Note that the base stage itself does not have any useful public methods; this is intended for users extending the stage script to add their own functionality.
+                <b>Returns:</b> The instance of the stage itself under the given name, or null if one does not exist/has not been loaded
+            </li>
+            <li>
+                <h3><i>Void</i> mute_music(<i>boolean</i> mute=true)</h3>
+                Mutes (if mute=true, otherwise will unmute) the audio bus marked for music in GoConductor\settings.txt
+            </li>
+            <li>
+                <h3><i>Void</i> mute_sfx()</h3>
+                Mutes (if mute=true, otherwise will unmute) the audio bus marked for sound effects in GoConductor\settings.txt
+            </li>
+        </ul>
+    </div>
+
+    <div id="home-link"><a href="using-goconductor.html">Return Home</a></div>
+</body>

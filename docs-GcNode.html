@@ -1,0 +1,59 @@
+<head>
+    <title>GoConductor docs!</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <h1>GcNode</h1>
+    <h2><i>Abstract class</i></h2>
+    <p>The most basic implementation of the TrackController interface, and the type from which most others inherit. Is not meant to be instanced. Exists as a common base type allowing different subtypes and external classes to access and communicate with each other. Most often used for parameter and return typing.</p>
+    <p id="extends">Extends: <a href="docs-TrackController.html">TrackController</a></p>
+    <p id="extended-by">Extended By: <a href="docs-MultiTrackPlayer.html">MultiTrackPlayer</a>, <a href="docs-MusicTrack.html">MusicTrack</a></p>
+
+    <div id="properties">
+        <h2>Properties</h2>
+        <ul>
+            <li>
+                <h3><i>Float</i> PlaybackPosition</h3>
+                The position in playback the track is currently at (or will be when it is next played). In seconds, where 0.0 seconds is the beginning of the track.
+            </li>
+            <li>
+                <h3><i>Boolean</i> Playing</h3>
+                Whether or not the track is currently playing.
+            </li>   
+        </ul>
+    </div>
+
+    <div  id="methods">
+        <h2>Methods</h2>
+        <ul>
+            <li>
+                <h3><i>void</i> Play()</h3>
+                Plays the audio from where it was last paused, or from the beginning if stopped or not played/playing. Sets <i>Playing</i> to true.
+            </li>
+            <li>
+                <h3><i>void</i> Pause()</h3><br>
+                Pauses the audio, ready to be played again from that same position. Sets <i>Playing</i> to false.
+            </li>
+            <li>
+                <h3><i>void</i> Stop()</h3><br>
+                Stops the audio, to be played again from the false.
+            </li>
+            <li>
+                <h3><i>void</i> Restart()</h3><br>
+                Plays the audio from the beginning of the track. Sets <i>Playing</i> to true.
+            </li>
+            <li>
+                <h3><i>void</i> TogglePause()</h3><br>
+                Plays the audio if it is not currently playing, or pauses it if it is. Sets <i>Playing</i> accordingly.
+            </li>
+            <li>
+                <h3><i>void</i> PlayFrom(<i>float</i> position)</h3>
+                Plays the audio from the position given. Sets <i>Playing</i> to true.
+            </li>
+        </ul>
+    </div>
+
+    <div id="home-link"><a href="using-goconductor.html">Return Home</a></div>
+
+</body>
